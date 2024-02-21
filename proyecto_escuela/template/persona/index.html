@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title'%}Persona{% endblock %}
+
+{% block 'principal' %}
+
+    <section class="contenido-principal container col-lg-9 ">
+        <div class="content-header">
+            <h2> Lista de persona</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped " style="width: 100%;">
+                            <thead>
+                                <tr class="bg-primary" style="color: white;">
+                                    <th>Documento</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Localidad</th>
+                                    <th>Departamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for persona in personas %}
+                                <tr>
+                                    <td>{{ persona.documento }}</td>
+                                    <td>{{ persona.nombre }}</td>
+                                    <td>{{ persona.apellido }}</td>
+                                    <td>{{ persona.localidad }}</td>
+                                    <td>{{ persona.departamento }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section> 
+
+{% endblock %}

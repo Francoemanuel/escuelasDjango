@@ -1,0 +1,2 @@
+# Ignore Django database configuration
+/proyecto_escuela/settings.py
