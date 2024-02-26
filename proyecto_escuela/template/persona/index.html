@@ -6,7 +6,7 @@
 
     <section class="contenido-principal container col-lg-9 ">
         <div class="content-header">
-            <h2> Lista de persona</h2>
+            <h2> Lista de personas</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -14,12 +14,13 @@
                     <div class="table-responsive">
                         <table id="example" class="table table-striped " style="width: 100%;">
                             <thead>
-                                <tr class="bg-primary" style="color: white;">
-                                    <th>Documento</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Localidad</th>
-                                    <th>Departamento</th>
+                                <tr style="color: white ;background-color: #3c8dbc;">
+                                    <th class="text-white">Documento</th>
+                                    <th class="text-white">Nombre</th>
+                                    <th class="text-white">Apellido</th>
+                                    <th class="text-white">Localidad</th>
+                                    <th class="text-white">Departamento</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,6 +31,13 @@
                                     <td>{{ persona.apellido }}</td>
                                     <td>{{ persona.localidad }}</td>
                                     <td>{{ persona.departamento }}</td>
+                                    <td>
+                                        <span>
+                                            <a href="#" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                            <a href="#" class="btn btn-success"><i class="fa-solid fa-pen"></i></a>
+                                            <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                        </span>
+                                    </td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

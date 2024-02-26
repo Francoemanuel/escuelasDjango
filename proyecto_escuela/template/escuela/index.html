@@ -5,6 +5,10 @@
 {% block 'principal' %}
 
     <section class="contenido-principal container col-lg-9 ">
+            <a href="{% url 'escuela_new' %}" class="btn btn-primary">
+                <i class="fas fa-graduation-cap"></i> Agregar
+            </a>
+        
         <div class="content-header">
             <h2> Lista de escuelas</h2>
         </div>
@@ -14,10 +18,11 @@
                     <div class="table-responsive">
                         <table id="example" class="table table-striped " style="width: 100%;">
                             <thead>
-                                <tr class="bg-primary" style="color: white;">
-                                    <th>Nombre</th>
-                                    <th>Numero</th>
-                                    <th>Departamento</th>
+                                <tr style="color: white; background-color: #3c8dbc;">
+                                    <th  class="text-white">Nombre</th>
+                                    <th  class="text-white">Numero</th>
+                                    <th  class="text-white">Departamento</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,6 +31,19 @@
                                     <td>{{ escuela.nombre }}</td>
                                     <td>{{ escuela.numero }}</td>
                                     <td>{{ escuela.departamento }}</td>
+                                    <td>
+                                        <span>
+                                            <a href="{% url 'escuela_view' id=escuela.id %}" class="btn btn-primary">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </a> 
+                                            <a href="{% url 'escuela_edit' id=escuela.id %}" class="btn btn-success">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+                                    </td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -34,8 +52,6 @@
                 </div>
             </div>
         </div>
-        
-
     </section> 
 
 {% endblock %}
