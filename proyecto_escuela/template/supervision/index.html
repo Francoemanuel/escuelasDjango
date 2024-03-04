@@ -5,15 +5,9 @@
 {% block 'principal' %}
 
     <section class="contenido-principal container col-lg-9 ">
-            <a href="{% url 'escuela_new' %}" class="btn btn-primary">
-                <i class="fas fa-graduation-cap"></i> Agregar
-            </a>
 
-            <a href="{% url 'escuela_excel' %}" class="btn btn-success">
-                <i class="fa-solid fa-file-excel"></i> excel
-            </a>
         <div class="content-header">
-            <h2> Lista de escuelas</h2>
+            <h2> Lista de Supervisiones</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -23,23 +17,26 @@
                             <thead>
                                 <tr style="color: white; background-color: #3c8dbc;">
                                     <th  class="text-white">Nombre</th>
-                                    <th  class="text-white">Numero</th>
-                                    <th  class="text-white">Departamento</th>
+                                    <th  class="text-white">Responsable</th>
+                                    <th  class="text-white">Email</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for escuela in escuelas %}
+                                {% for supervision in supervisiones %}
                                 <tr>
-                                    <td style="height: 5px !important;">{{ escuela.nombre }}</td>
-                                    <td class="small-height">{{ escuela.numero }}</td>
-                                    <td class="small-height">{{ escuela.departamento }}</td>
+                                    <td>{{ supervision.nombre }}</td>
+                                    <td>{{ supervision.responsable }}</td>
+                                    <td>{{ supervision.email }}</td>
                                     <td>
                                         <span>
-                                            <a href="{% url 'escuela_view' id=escuela.id %}" class="btn btn-primary">
+                                            <a href="{% url 'supervision_excel' id=supervision.id %}" class="btn btn-success">
+                                                <i class="fa-solid fa-file-excel"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-primary">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </a> 
-                                            <a href="{% url 'escuela_edit' id=escuela.id %}" class="btn btn-success">
+                                            <a href="#" class="btn btn-warning">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
                                             <a href="#" class="btn btn-danger">
