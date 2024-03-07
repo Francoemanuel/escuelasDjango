@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title'%}Escuela{% endblock %}
+
+
+{% block 'principal' %}
+<style>
+    .form-label{
+        margin-top: 10px;
+    }
+    .boton-color{
+        background:#238edf;
+    }
+    </style>
+
+    <section class="contenido-principal container col-lg-9 ">
+        <div class="content-header">
+            <h2> Recupero de haberes</h2>
+        </div>
+        <div class="card text-dark bg-light mb-3">
+            <div class="card-header">
+                <b>Procesar reportes</b>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <div class="row">
+                                <form class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="mb-3 mt-2">
+                                            <div class="col-ms-9">
+                                                <input name="archivo"
+                                                       id="selectFile"
+                                                       type="file"
+                                                       class="form-control"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid gap-2 justify-content-center">
+                                            <button type="submit" id="procesar" class="btn boton-color">Procesar</button>
+                                        </div>
+                                        {% csrf_token %}
+                                    </div>
+                                </form>
+                            </div>
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section> 
+{% endblock %}

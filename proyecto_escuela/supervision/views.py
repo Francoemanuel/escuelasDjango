@@ -40,6 +40,6 @@ def excel(request, id):
         excel_data.seek(0)
     
         response = HttpResponse(excel_data.getvalue(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename="escuelas.xlsx"'
+        response['Content-Disposition'] = 'attachment; filename=".xlsx"'
         return response
 
